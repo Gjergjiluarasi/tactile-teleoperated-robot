@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  mirmi_6g_life_service:
+    build: .
+    image: mirmi_6g_life_image:0.1.0
+    container_name: mirmi_6g_life_container
+    cap_add:
+      - ALL
+      - SYS_NICE
+    # ports:
+    #   - '8080:8080'
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    # entrypoint: /bin/sh
+    privileged: false
+    volumes:
+      - /tmp/.X11-unix/:/tmp/.X11-unix/
+      - /dev:/dev
+      - mirmi_6g_life_container_volume:/root/
+      # - /lib/modules:/lib/modules
+      # - /usr/src/:/usr/src/
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - TZ=Europe/London
+      - ROS_DOMAIN_ID=9
+      - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mirmi_6g_life_container_volume/libfranka/build
+    network_mode: host
+
+volumes:
+  mirmi_6g_life_container_volume:

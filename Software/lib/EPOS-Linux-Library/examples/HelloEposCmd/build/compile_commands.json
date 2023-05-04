@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/gjergji/Master-Thesis/EPOS-Controller/EPOS_Linux_Library/examples/HelloEposCmd/build",
+  "command": "/usr/bin/g++   -g -Wall -fPIE -o CMakeFiles/HelloEposCmd.dir/HelloEposCmd.cpp.o -c /home/gjergji/Master-Thesis/EPOS-Controller/EPOS_Linux_Library/examples/HelloEposCmd/HelloEposCmd.cpp",
+  "file": "/home/gjergji/Master-Thesis/EPOS-Controller/EPOS_Linux_Library/examples/HelloEposCmd/HelloEposCmd.cpp"
+}
+]

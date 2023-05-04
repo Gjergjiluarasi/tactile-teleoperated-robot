@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/trajectory.dir/main.cpp.o CMakeFiles/trajectory.dir/include/trajectory.cpp.o -o trajectory 

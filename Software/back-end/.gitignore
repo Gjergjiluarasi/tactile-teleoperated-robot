@@ -1,0 +1,8 @@
+build/ 
+debug/ 
+release/
+examples/client/build
+examples/server/build
+examples/trajectory/build
+examples/configuration/build
+trash/HelloEposCmd/build

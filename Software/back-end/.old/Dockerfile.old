@@ -1,0 +1,47 @@
+FROM ros:noetic
+
+# Change terminal to bash
+RUN mv /bin/sh /bin/sh-old && \
+    ln -s /bin/bash /bin/sh
+
+RUN /bin/bash -c "bash /ros_entrypoint.sh"
+
+# install ros package
+#RUN apt-get update && apt-get install -y \
+#    ros-${ROS_DISTRO}-demo-nodes-cpp \
+#    ros-${ROS_DISTRO}-demo-nodes-py
+# rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y net-tools
+RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y python3-catkin-tools
+
+# RUN chmod +x /opt/ros/noetic/setup.bash && \
+#     /opt/ros/noetic/setup.bash && \
+#     cd /home && \
+#     mkdir -p ~/catkin_ws/src && \
+#     cd ~/catkin_ws/src && \
+#     git clone https://github.com/leggedrobotics/message_logger.git && \
+#     git clone https://github.com/leggedrobotics/soem_interface.git && \
+#     git clone https://github.com/leggedrobotics/ethercat_sdk_master.git &&\
+#     git clone https://github.com/leggedrobotics/maxon_epos_ethercat_sdk.git &&\
+#     cd ~/catkin_ws/ && \
+#     catkin_make --only-pkg-with-deps message_logger && \
+#     catkin_make --only-pkg-with-deps soem_interface_examples && \
+#     catkin_make --only-pkg-with-deps ethercat_sdk_master && \
+#     catkin_make
+
+### Install Libfranka
+COPY ./build_maxon.bash /build_maxon.bash
+RUN chmod +x /build_maxon.bash
+ENTRYPOINT [ "/build_maxon.bash" ]
+
+CMD ["/bin/bash"]
+
+#RUN  && \
+ #   cd maxon_epos_ethercat_sdk
+    # cmake -S . -B build
+
+# launch ros package
+# CMD ["ros2", "launch", "demo_nodes_cpp", "talker_listener.launch.py"]
+

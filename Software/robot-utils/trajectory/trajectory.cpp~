@@ -1,0 +1,25 @@
+#include "trajectory.hpp"
+
+trajectoryParameters_t  getTrajectoryParameters(trajectory_t tStart, trajectory_t tFinal, int32_t vMax, int32_t aMax)
+{
+    trajectoryParameters_t trajectoryParams= {
+          b0 = tStart.x,
+          b1 = tStart.v,
+          b2 = tStart.a/2, 
+          b3,
+          b4,
+          b5};
+    float timeForVMax = abs(tFinal.x-tStart.x)/vMax;
+    float timeForXFinal = abs(tFinal.x-tStart.x)/vMax;
+    float timeFinal (timeForVMax > timeForXFinal) ? timeForVMax : timeForXFinal;
+
+   [trajectoryParams.b3; trajectoryParams.b4; trajectoryParams.b5]=
+                [pow(timeFinal,3), pow(timeFinal,4), pow(timeFinal,5);
+                 3*pow(timeFinal,2), 4*pow(timeFinal,3), 5*pow(timeFinal,4);
+                 6*pow(timeFinal,1), 12*pow(timeFinal,2), 20*pow(timeFinal,3)].inv()* 
+                [tFinal.x-tStart.x-tStart.v*timeFinal-tStart.a*pow(timeFinal,2)/2; 
+                 tFinal.v-tStart.v-tStart*timeFinal; 
+                 tFinal.a-tStart.a]; 
+    return trajectoryParams; 
+}
+

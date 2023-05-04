@@ -1,0 +1,60 @@
+<RobotMap>
+    <Robots>
+        <Robot>
+            <Name>Left Franka Research 3 arm with EndoWrist</Name>
+            <Description>Left robot arm used for 6G-life project</Description>
+            <ID>0</ID>
+            <FrankaIP>172.16.0.2</FrankaIP>
+            <PcUdpIP>192.16.0.1</PcUdpIP>
+            <PcUdpPort>8080</PcUdpPort>
+            <Tool>
+                <Name>Left EndoWrist</Name>
+                <Description>Left EndoWrist used to control Da Vinci EndoWrist tool</Description>
+                <ID>3</ID>
+            </Tool>
+            <Sensors>
+                <ForceTorqueSensor>
+                    <Name>Wittenstein 6 axis force torque sensor</Name>
+                    <Description>Force torque sensor used to add tactile capability to the robotic system</Description>
+                    <ID>6</ID>
+                </ForceTorqueSensor>
+            </Sensors>
+            <Plot>1</Plot>
+        </Robot>
+        <Robot>
+            <Name>Right Franka Research 3 arm with EndoWrist</Name>
+            <Description>Right robot arm used for 6G-life project</Description>
+            <ID>1</ID>
+            <FrankaIP>172.16.0.3</FrankaIP>
+            <PcUdpIP>192.16.0.2</PcUdpIP>
+            <PcUdpPort>8080</PcUdpPort>
+            <Tool>
+                <Name>Right EndoWrist</Name>
+                <Description>Right EndoWrist used to control Da Vinci EndoWrist tool</Description>
+                <ID>4</ID>
+            </Tool>
+            <Sensors>
+                <ForceTorqueSensor>
+                    <Name>Wittenstein 6 axis force torque sensor</Name>
+                    <Description>Force torque sensor used to add tactile capability to the robotic system</Description>
+                    <ID>6</ID>
+                </ForceTorqueSensor>
+            </Sensors>
+            <Plot>1</Plot>
+        </Robot>
+        <Robot>
+            <Name>Middle Franka Research 3 arm with Endoscope</Name>
+            <Description>Middle robot arm used for 6G-life project</Description>
+            <ID>2</ID>
+            <FrankaIP>172.16.0.4</FrankaIP>
+            <PcUdpIP>192.16.0.3</PcUdpIP>
+            <PcUdpPort>8080</PcUdpPort>
+            <Tool>
+                <Name>Endosope</Name>
+                <Description>Endoscope used to control endoscope tool</Description>
+                <ID>5</ID>
+            </Tool>
+            <Plot>1</Plot>
+        </Robot>
+    </Robots>
+</RobotMap>

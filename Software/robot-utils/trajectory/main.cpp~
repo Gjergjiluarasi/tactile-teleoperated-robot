@@ -1,0 +1,14 @@
+#include <iostream>
+#include <math.h>
+#include "trajectory.hpp"
+
+using namespace std;
+
+int main()
+{
+
+
+
+    return 0;
+}
+

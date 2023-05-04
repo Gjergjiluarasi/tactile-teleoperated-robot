@@ -1,0 +1,20 @@
+<RobotMap>
+    <Robots>
+        <Robot>
+            <Name>Franka Research 3</Name>
+            <Description>Robot arm used for 6G-life project</Description>
+            <ID>0</ID>
+            <RobotIP>192.168.3.109</RobotIP>
+            <PcUdpIP>192.168.3.1</PcUdpIP>
+            <PcUdpPort>8080</PcUdpPort>
+        </Robot>
+        <Robot>
+            <Name>Franka Research 3</Name>
+            <Description>Robot arm used for 6G-life project</Description>
+            <ID>1</ID>
+            <RobotIP>192.168.3.110</RobotIP>
+            <PcUdpIP>192.168.3.2</PcUdpIP>
+            <PcUdpPort>8080</PcUdpPort>
+        </Robot>
+    </Robots>
+</RobotMap>
